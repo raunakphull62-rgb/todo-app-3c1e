@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+supabase-py
+python-jose
+pydantic
+passlib
+python-dotenv
+sqlalchemy
+psycopg2
+typing-extensions
+starlette
+jose

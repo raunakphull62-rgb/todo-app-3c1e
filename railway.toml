@@ -1,0 +1,29 @@
+[env]
+DATABASE_URL = ${DATABASE_URL}
+SUPABASE_KEY = ${SUPABASE_KEY}
+SUPABASE_URL = ${SUPABASE_URL}
+SECRET_KEY = ${SECRET_KEY}
+
+[variables]
+DATABASE_URL = "postgresql://user:password@localhost:5432/database"
+SUPABASE_KEY = "your-supabase-key"
+SUPABASE_URL = "https://your-supabase-url.supabase.co"
+SECRET_KEY = "your-secret-key"
+
+[deploy]
+branch = "main"
+static_sites = ["static"]
+
+[[services]]
+name = "todo-app"
+port = 8000
+health_check = true
+health_check_path = "/health"
+health_check_interval = 10
+health_check_timeout = 5
+
+[[services.env]]
+DATABASE_URL = ${DATABASE_URL}
+SUPABASE_KEY = ${SUPABASE_KEY}
+SUPABASE_URL = ${SUPABASE_URL}
+SECRET_KEY = ${SECRET_KEY}
